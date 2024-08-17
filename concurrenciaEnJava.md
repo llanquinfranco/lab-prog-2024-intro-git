@@ -1,22 +1,15 @@
-a)  Los semáforos se emplean para permitir el acceso a diferentes partes de programas (llamados 
-secciones críticas) donde se manipulan variables o recursos que deben ser accedidos de forma 
-especial. Según el valor con que son inicializados se permiten a más o menos procesos utilizar el
-recurso de forma simultánea.
+# Semaforos en Java
 
-    Un tipo simple de semáforo es el binario, que puede tomar solamente los valores 0 y 1. Se 
-inicializan en 1 y son usados cuando sólo un proceso puede acceder a un recurso a la vez. Se les 
+    Un tipo simple de semáforo es el binario, que puede tomar solamente los valores 0 y 1.
+Se inicializan en 1 y son usados cuando sólo un proceso puede acceder a un recurso a la vez. Se les 
 suele llamar mutex.
 
-    Los semáforos pueden ser usados para diferentes propósitos, entre ellos:
-        Implementar cierres de exclusión mutua o locks.
-        Barreras.
-        Permitir a un máximo de N hilos acceder a un recurso, inicializando el semáforo en N.
-        Notificación. Inicializando el semáforo en 0 puede usarse para comunicación entre threads
-sobre la disponibilidad de un recurso.
-
-
-b)  Para utilizar semáforos en Java, primero debes importar la clase Semaphore:
-import java.util.concurrent.Semaphore;
+Los semáforos pueden ser usados para diferentes propósitos, entre ellos:
+    Implementar cierres de exclusión mutua o locks.
+    Barreras.
+    Permitir a un máximo de N hilos acceder a un recurso, inicializando el semáforo en N.
+    Notificación. Inicializando el semáforo en 0 puede usarse para comunicación entre threads
+sobre la disponibilidad de un recurso
 
     Puedes crear un semáforo especificando el número de permisos que quieres que tenga. 
 Por ejemplo, para crear un semáforo con un único permiso (similar a un bloqueo mutuo), puedes
@@ -29,6 +22,7 @@ Semaphore semaphore = new Semaphore(3);
     Sus metodos principales son:
 acquire(): Este método se utiliza para adquirir un permiso del semáforo. Si no hay permisos 
 disponibles, el hilo que llama a este método se bloqueará hasta que un permiso esté disponible.
+
 try {
     semaphore.acquire();
 } catch (InterruptedException e) {
