@@ -1,7 +1,7 @@
 # Semaforos en Java
 
     Un tipo simple de semáforo es el binario, que puede tomar solamente los valores 0 y 1.
-Se inicializan en 1 y son usados cuando sólo un proceso puede acceder a un recurso a la vez. Se les 
+    Se inicializan en 1 y son usados cuando sólo un proceso puede acceder a un recurso a la vez. Se les 
 suele llamar mutex.
 
 Los semáforos pueden ser usados para diferentes propósitos, entre ellos:
@@ -11,7 +11,7 @@ Los semáforos pueden ser usados para diferentes propósitos, entre ellos:
     Notificación. Inicializando el semáforo en 0 puede usarse para comunicación entre threads
 sobre la disponibilidad de un recurso
 
-    Puedes crear un semáforo especificando el número de permisos que quieres que tenga. 
+Puedes crear un semáforo especificando el número de permisos que quieres que tenga. 
 Por ejemplo, para crear un semáforo con un único permiso (similar a un bloqueo mutuo), puedes
 hacer lo siguiente:
 Semaphore semaphore = new Semaphore(1);
@@ -19,7 +19,7 @@ Semaphore semaphore = new Semaphore(1);
 También puedes crear un semáforo con múltiples permisos, especificando un número mayor:
 Semaphore semaphore = new Semaphore(3);
 
-    Sus metodos principales son:
+Sus metodos principales son:
 acquire(): Este método se utiliza para adquirir un permiso del semáforo. Si no hay permisos 
 disponibles, el hilo que llama a este método se bloqueará hasta que un permiso esté disponible.
 
